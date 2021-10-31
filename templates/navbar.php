@@ -1,15 +1,15 @@
 <header class="header">
     <nav class="nav">
         <div class="nav__logo">
-            <a href="">
-                <img src="Imagenes/bahiabranch.png" alt="Logotipo de BahiaBranch">
+            <a href="<?php echo($actual_link) ?>">
+                <img src="<?php echo($actual_link) ?>Imagenes/bahiabranch.png" alt="Logotipo de BahiaBranch">
                 <h2>BahiaBranch</h2>
             </a>
         </div>
         <div class="nav__menu" id="navMenu">
             <div class="nav__items nav__items--left" id="leftMenu">
                 <div class="nav__item">
-                    <a href="#">
+                    <a href="<?php echo($actual_link) ?>">
                         <div class="nav__itemName">
                             Inicio
                         </div>
@@ -116,7 +116,7 @@
             </div>
             <div class="nav__items nav__items--right" id="rightMenu">
                 <div class="nav__item">
-                    <a href="blog/">
+                    <a href="<?php echo($actual_link) ?>blog">
                         <div class="nav__itemName">
                             Blog
                         </div>
@@ -137,7 +137,9 @@
                     </a>
                 </div>
                 <div class="nav__switch" id="navSwitch">
+                    <div class="nav__switch-circle" id="nav_switch-circle"></div>
                     <ion-icon name="moon"></ion-icon>
+                    <ion-icon name="sunny-outline"></ion-icon>
                 </div>
                 <div class="nav__close" id="navClose">
                     <ion-icon name="close-outline"></ion-icon>
@@ -149,4 +151,3 @@
         </div>
     </nav>
 </header>
-<div class="mirror" id="mirror"></div>

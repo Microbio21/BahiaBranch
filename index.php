@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php  session_start(); 
+       include('link.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BahiaBranch</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="Archivos/Css/Main.css">
+    <link rel="stylesheet" href="<?php echo($actual_link) ?>Archivos/Css/Main.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <meta name="description" content="BahiaBranch is a simple web to provide you a lot nav__informatión about critos, finance and it teaches you programing"/>
     <meta name="keywords" content="web design, web programing, programing, web development, seo, cryptocurrency, cripto, btc, eth, blog" />
@@ -15,11 +17,7 @@
 </head>
 
 <body>
-    <?php include('templates/navbar.php'); 
-    
-        echo(password_hash('UserAdmin25', PASSWORD_ARGON2I));
-
-    ?>
+    <?php include('templates/navbar.php'); ?>
 
     <?php //verify if the admin is logged or not
     if(isset($_SESSION['Login'])): ?>

@@ -4,18 +4,20 @@
 */
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;box-sizing:border-box}
 :root {
-    --white: #fff;
-    --borderHeader: rgb(243, 243, 243);
+    --white: #ffffff;
+    --borderHeader: rgba(255, 255, 255, 0.541);
     --linkHeader: #292929;
     --logoText: #0c090d;
-    --bg: #fff;
+    --bg: rgb(246, 246, 246);
+    --bg-card: #fff;
 }
 body.darkmode {
     --white: #0c090d;
     --borderHeader: #eee;
-    --linkHeader: #f5cb5c;
+    --linkHeader: #f2f4ff;
     --logoText: #fff;
     --bg: #0e0d1a;
+    --bg-card: #282352;
 }
 body.darkmode .nav__submenu,
 body.darkmode .header {
@@ -29,8 +31,21 @@ body.darkmode .nav__menu {
     border: none;
     box-shadow: none;
 }
-body.darkmode .nav__itemName:hover {
-    background-color: #0e0d1a;
+body.darkmode .nav__item a:hover {
+    color: rgb(112, 127, 255);
+    background-color: #a685ff38;
+    border-radius: 8px;
+}
+body.darkmode .card-v4 {
+    box-shadow: none;
+    border: none;
+}
+body.darkmode .card-title-v4 h2,
+body.darkmode .card-date-v4 {
+    color: #fff;
+}
+body.darkmode .card-description-v4 p {
+    color: #d4d4d4;
 }
 body {
     font-family: 'IBM Plex Sans', sans-serif;
@@ -41,7 +56,7 @@ body {
     height: 100vh;
     background-color: transparent;
     position: fixed;
-    z-index: -1;
+    z-index: 1;
     left: 0;
     top: 0;
     display: none;
@@ -55,7 +70,7 @@ body {
     background-color: var(--white);
     border-bottom: 1px solid var(--borderHeader);
     
-    z-index: 3;
+    z-index: 10;
 }
 .nav {
     width: 98%;
@@ -64,6 +79,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.nav__logo {
+    margin-right: 1rem;
 }
 .nav__logo a {
     height: 100%;
@@ -105,12 +123,12 @@ body {
     padding: 1rem;
 }
 .nav__item a:hover {
-    color: rgb(21, 25, 59);
-    font-weight: 500;
-    transition: all .2s;
-    border-bottom: 1px solid #0c090d;
+    color: rgb(0, 17, 173);
+    background-color: #855cf513;
+    border-radius: 8px;
 }
-.nav__item a:hover .nav__arnav__row {
+.nav__item a:hover .nav__arnav__row,
+.nav__submenu:hover .nav__arnav__row {
     transform: rotate(180deg);
 }
 
@@ -136,6 +154,7 @@ body {
     display: none;
     flex-direction: column;
     transition: all .3s ease;
+    z-index: 3;
 }
 
 .nav__submenu .nav__itemName {
@@ -162,8 +181,8 @@ body {
     word-wrap: break-word;
 }
 .nav__submenu .nav__itemName:hover {
-    background-color: rgba(226, 226, 226, 0.445);
-    border-radius: 6px;
+    background-color: rgba(60, 86, 255, 0.048);
+    border-radius: 8px;
 }
 .nav__submenu .nav__itemName:hover a .nav__row {
     transform: scale(0.9);
@@ -172,7 +191,27 @@ body {
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
+    width: 50px;
+    position: relative;
+    box-shadow: 0 0 1px #29292959;
+    border-radius: 6px;
+    padding: 0.3rem 0.3rem;
+    margin: 1rem;
+}
+.nav__switch-circle {
+    width: 22px;
+    height: 22px;
+    background-color: #000000;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    left: unset;
+    z-index: 2;
+}
+.change-site {
+    right: unset;
+    left: 0;
 }
 /*end*/
 
